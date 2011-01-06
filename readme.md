@@ -1,5 +1,9 @@
 Hello World plugin example for the cliforce shell
 
+        git clone git://github.com/sclasen/cliforce.git
+        cd cliforce
+        mvn install
+        cd ..
         git clone git://github.com/sclasen/cliplugin.git
         cd cliplugin
         mvn install
