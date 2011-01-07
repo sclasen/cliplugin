@@ -3,13 +3,14 @@ import com.force.cliforce.CommandContext;
 import com.force.cliforce.CommandDescriptor;
 import com.force.cliforce.Plugin;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
 public class HelloWorldPlugin implements Plugin {
-    public List<CommandDescriptor> getCommands() {
-        return Collections.singletonList(new CommandDescriptor("hello", new HelloWorldCommand()));
+    public List<Command> getCommands() {
+        return Arrays.asList(new Command[]{new HelloWorldCommand()});
     }
 
     public String getName() {
@@ -19,6 +20,11 @@ public class HelloWorldPlugin implements Plugin {
     public static class HelloWorldCommand implements Command {
         public String describe() {
             return "Prints Hello World";
+        }
+
+        @Override
+        public String name() {
+            return "hello";
         }
 
         public void execute(CommandContext ctx) throws Exception {
