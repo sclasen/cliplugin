@@ -1,10 +1,8 @@
 import com.force.cliforce.Command;
+import com.force.cliforce.CommandContext;
 import com.force.cliforce.CommandDescriptor;
 import com.force.cliforce.Plugin;
-import com.sforce.soap.metadata.MetadataConnection;
-import com.sforce.soap.partner.PartnerConnection;
 
-import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,8 +21,8 @@ public class HelloWorldPlugin implements Plugin {
             return "Prints Hello World";
         }
 
-        public void execute(String[] strings, PartnerConnection partnerConnection, MetadataConnection metadataConnection, PrintWriter printWriter) throws Exception {
-            printWriter.println("Hello World");
+        public void execute(CommandContext ctx) throws Exception {
+            ctx.getCommandWriter().println("Hello World");
         }
     }
 }
