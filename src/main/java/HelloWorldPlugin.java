@@ -1,6 +1,5 @@
 import com.force.cliforce.Command;
 import com.force.cliforce.CommandContext;
-import com.force.cliforce.CommandDescriptor;
 import com.force.cliforce.Plugin;
 
 import java.util.Arrays;

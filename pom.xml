@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cliplugin</groupId>
+    <groupId>com.force.cliforce.plugin</groupId>
     <artifactId>cliplugin</artifactId>
     <version>1.0</version>
 
