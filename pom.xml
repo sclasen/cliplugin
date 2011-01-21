@@ -7,15 +7,64 @@
     <groupId>com.force.cliforce.plugin</groupId>
     <artifactId>cliplugin</artifactId>
     <version>1.0</version>
-
-     <dependencies>
-         <dependency>
-             <groupId>com.force.cliforce</groupId>
-             <artifactId>cliforce</artifactId>
-             <version>0.0.1-SNAPSHOT</version>
-             <scope>provided</scope>
-         </dependency>
-     </dependencies>
+    <properties>
+        <force.repo.url>http://repo.t.salesforce.com/archiva/repository/releases</force.repo.url>
+        <force.repo.snapshot.url>http://repo.t.salesforce.com/archiva/repository/snapshots</force.repo.snapshot.url>
+    </properties>
+    <repositories>
+        <repository>
+            <id>force.repo</id>
+            <name>Force.com Repository</name>
+            <url>${force.repo.snapshot.url}</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>force.repo.snapshot</id>
+            <name>Force.com Snapshot Repository</name>
+            <url>${force.repo.snapshot.url}</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>scala-tools.releases</id>
+            <name>Scala-Tools Dependencies Repository for Releases</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>force.repo</id>
+            <name>Force.com Repository</name>
+            <url>${force.repo.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>force.repo.snapshot</id>
+            <name>Force.com Snapshot Repository</name>
+            <url>${force.repo.snapshot.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <scm>
+        <connection>scm:git:git://github.com/sclasen/cliplugin.git</connection>
+        <developerConnection>scm:git:git@github.com:sclasen/cliplugin.git</developerConnection>
+        <url>http://github.com/sclasen/cliplugin</url>
+    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>com.force.cliforce</groupId>
+            <artifactId>cliforce</artifactId>
+            <version>0.0.2-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
