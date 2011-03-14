@@ -6,7 +6,7 @@
 
     <groupId>com.force.cliforce.plugin</groupId>
     <artifactId>cliplugin</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <properties>
         <force.repo.url>http://repo.t.salesforce.com/archiva/repository/releases</force.repo.url>
         <force.repo.snapshot.url>http://repo.t.salesforce.com/archiva/repository/snapshots</force.repo.snapshot.url>
@@ -15,7 +15,7 @@
         <repository>
             <id>force.repo</id>
             <name>Force.com Repository</name>
-            <url>${force.repo.snapshot.url}</url>
+            <url>${force.repo.url}</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>com.force.cliforce</groupId>
             <artifactId>cliforce</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>0.0.4-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

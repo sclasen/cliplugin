@@ -2,19 +2,20 @@ import com.force.cliforce.Command;
 import com.force.cliforce.CommandContext;
 import com.force.cliforce.Plugin;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
 public class HelloWorldPlugin implements Plugin {
-    public List<Command> getCommands() {
-        return Arrays.asList(new Command[]{new HelloWorldCommand()});
+
+
+    @Override
+    public List<Class<? extends Command>> getCommands() {
+        return (List<Class<? extends Command>>) (List) Collections.singletonList(HelloWorldCommand.class);
+
     }
 
-    public String getName() {
-        return "HelloWorld";
-    }
+
 
     public static class HelloWorldCommand implements Command {
         public String describe() {
