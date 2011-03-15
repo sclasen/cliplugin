@@ -2,6 +2,7 @@ import com.force.cliforce.Command;
 import com.force.cliforce.CommandContext;
 import com.force.cliforce.Plugin;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,8 +12,7 @@ public class HelloWorldPlugin implements Plugin {
 
     @Override
     public List<Class<? extends Command>> getCommands() {
-        return (List<Class<? extends Command>>) (List) Collections.singletonList(HelloWorldCommand.class);
-
+        return Arrays.<Class<? extends Command>>asList(HelloWorldCommand.class);
     }
 
 
